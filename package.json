@@ -5,11 +5,9 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build main.jsx --out-dir=build",
+    "build": "vite build",
     "lint": "eslint .",
-    "preview": "vite preview",
-    "predeploy": "npm run build",
-    "deploy": "vercel --prod"
+    "preview": "vite preview"
   },
   "dependencies": {
     "react": "^18.3.1",
