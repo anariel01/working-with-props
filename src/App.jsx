@@ -67,34 +67,27 @@ function CardContainer() {
   return (
     <div className="card-container">
       {cardData.map((card) => (
-        <Card
-          key={card.id}
-          title={card.title}
-          description={card.description}
-          date={card.date}
-          img={card.imageUrl}
-          tags={card.tags}
-        />
+        <Card card={card} />
       ))}
     </div>
   );
 }
-function Card(props) {
+function Card({ card }) {
+  if (card.archived) return null;
   return (
     <div className="card">
-      <img className="card-image" src={props.img} alt={props.title} />
+      <img className="card-image" src={card.imageUrl} alt={card.title} />
       <div className="card-content">
-        <h3 className="card-title">{props.title}</h3>
-        <p className="card-description">{props.description}</p>
-        <span className="card-date">{props.date}</span>
-        <CardTag tags={props.tags} />
+        <h3 className="card-title">{card.title}</h3>
+        <p className="card-description">{card.description}</p>
+        <span className="card-date">{card.date}</span>
+        <CardTag tags={card.tags} />
       </div>
     </div>
   );
 }
 
-function CardTag(prop) {
-  const tags = prop.tags;
+function CardTag({ tags }) {
   return (
     <div className="card-tags">
       {tags.map((tag) => (
