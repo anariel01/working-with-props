@@ -27,7 +27,7 @@ const cardData = [
     date: "10 октября 2023",
     imageUrl: "/img-3.jpeg",
     tags: ["#HR", "#кастомизация", "#VIP"],
-    archived: true,
+    archived: false,
   },
   {
     id: 4,
