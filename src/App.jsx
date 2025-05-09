@@ -81,20 +81,16 @@ function Card({ card }) {
         <h3 className="card-title">{card.title}</h3>
         <p className="card-description">{card.description}</p>
         <span className="card-date">{card.date}</span>
-        <CardTag tags={card.tags} />
+        <div className="card-tags">
+          {card.tags.map((tag) => (
+            <CardTag tag={tag} />
+          ))}
+        </div>
       </div>
     </div>
   );
 }
 
-function CardTag({ tags }) {
-  return (
-    <div className="card-tags">
-      {tags.map((tag) => (
-        <div key={tag} className="card-tag">
-          {tag}
-        </div>
-      ))}
-    </div>
-  );
+function CardTag({ tag }) {
+  return <span className="card-tag">{tag}</span>;
 }
